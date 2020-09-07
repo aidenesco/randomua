@@ -1,3 +1,4 @@
+//randomua is used to generate random User Agents for whatever data scraping needs you have. It comes with everything loaded and ready to go
 package randomua
 
 import (
@@ -33,6 +34,7 @@ func init() {
 	ua = weightedrand.NewChooser(uas...)
 }
 
+//Random will give you a random User-Agent string
 func Random() string {
 	return ua.Pick().(string)
 }
