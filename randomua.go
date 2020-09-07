@@ -1,4 +1,4 @@
-//randomua is used to generate random User Agents for whatever data scraping needs you have. It comes with everything loaded and ready to go
+//randomua generates random User-Agent strings
 package randomua
 
 import (
