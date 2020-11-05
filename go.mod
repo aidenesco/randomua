@@ -2,4 +2,4 @@ module github.com/aidenesco/randomua
 
 go 1.14
 
-require github.com/mroth/weightedrand v0.3.0
+require github.com/mroth/weightedrand v0.4.0

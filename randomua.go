@@ -9,7 +9,7 @@ import (
 	"time"
 )
 
-var ua weightedrand.Chooser
+var ua *weightedrand.Chooser
 
 type choice struct {
 	UserAgent string `json:"userAgent"`
@@ -17,21 +17,24 @@ type choice struct {
 }
 
 func init() {
+	var choices []weightedrand.Choice
+	var loadChoices []choice
+
 	rand.Seed(time.Now().UTC().UnixNano())
 
-	var uas []weightedrand.Choice
-	var luas []choice
-
-	err := json.Unmarshal([]byte(load), &luas)
+	err := json.Unmarshal([]byte(load), &loadChoices)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	for _, v := range luas {
-		uas = append(uas, weightedrand.NewChoice(v.UserAgent, uint(v.Weight)))
+	for _, v := range loadChoices {
+		choices = append(choices, weightedrand.NewChoice(v.UserAgent, uint(v.Weight)))
 	}
 
-	ua = weightedrand.NewChooser(uas...)
+	ua, err = weightedrand.NewChooser(choices...)
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 
 //Random will give you a random User-Agent string
