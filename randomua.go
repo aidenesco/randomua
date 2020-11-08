@@ -1,4 +1,4 @@
-//randomua generates random User-Agent strings
+//Package randomua generates User-Agent strings
 package randomua
 
 import (
