@@ -1,4 +1,4 @@
-# RandomUA [![GoDoc](https://godoc.org/github.com/aidenesco/randomua?status.svg)](https://godoc.org/github.com/aidenesco/randomua) [![Go Report Card](https://goreportcard.com/badge/github.com/aidenesco/randomua)](https://goreportcard.com/report/github.com/aidenesco/randomua)
+# RandomUA [![PkgGoDev](https://pkg.go.dev/badge/github.com/aidenesco/randomua)](https://pkg.go.dev/github.com/aidenesco/randomua) [![Go Report Card](https://goreportcard.com/badge/github.com/aidenesco/randomua)](https://goreportcard.com/report/github.com/aidenesco/randomua)
 This package generates a random user agent from a preloaded, weighted set.
 
 Thank you to intoli.com for releasing their dataset.
